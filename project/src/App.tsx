@@ -8,6 +8,7 @@ import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 import { SocialLinks } from './components/SocialLinks';
 import { ProjectDetails } from './components/ProjectDetails';
+import { AllProjects } from './components/AllProjects';
 
 function HomePage() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
+          <Route path="/projects" element={<AllProjects />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -11,6 +11,8 @@ export function Projects() {
     threshold: 0.2,
   });
 
+  const featuredProjects = projects.slice(0, 2);
+
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 bg-[#0a192f]">
       <motion.div
@@ -20,12 +22,20 @@ export function Projects() {
         transition={{ duration: 0.5 }}
         className="max-w-6xl mx-auto"
       >
-        <h2 className="flex items-center gap-2 text-3xl font-bold text-[#ccd6f6] mb-12">
-          <span className="text-[#64ffda]">02.</span> Some Things I've Built
-        </h2>
+        <div className="flex justify-between items-center mb-12">
+          <h2 className="flex items-center gap-2 text-3xl font-bold text-[#ccd6f6]">
+            <span className="text-[#64ffda]">02.</span> Some Things I've Built
+          </h2>
+          <Link
+            to="/projects"
+            className="inline-flex items-center gap-2 px-4 py-2 text-[#64ffda] border-2 border-[#64ffda] rounded hover:bg-[#64ffda]/10 transition-colors"
+          >
+            View All <ArrowRight size={16} />
+          </Link>
+        </div>
 
         <div className="space-y-32">
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 50 }}
