@@ -22,7 +22,7 @@ export function Hero() {
             transition={{ delay: 0.3 }}
             className="text-5xl sm:text-7xl font-bold text-[#ccd6f6]"
           >
-            John Developer.
+            Rishi Developer.
           </motion.h1>
           
           <motion.h2

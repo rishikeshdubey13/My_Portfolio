@@ -15,7 +15,7 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const menuItems = ['Home', 'About', 'Projects', 'Contact'];
+  const menuItems = ['Home', 'About', 'Experience', 'Projects', 'Contact'];
 
   return (
     <motion.header

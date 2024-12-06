@@ -33,8 +33,8 @@ export function About() {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="text-[#8892b0] space-y-4">
             <p>
-              Hello! My name is John and I enjoy creating things that live on the internet.
-              My interest in web development started back in 2012 when I decided to try
+              Hello! My name is Rishi and I enjoy creating things that live on the internet.
+              My interest in web development started back in 2015 when I decided to try
               editing custom Tumblr themes — turns out hacking together a custom reblog
               button taught me a lot about HTML & CSS!
             </p>

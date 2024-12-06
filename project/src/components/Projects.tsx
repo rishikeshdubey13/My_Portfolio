@@ -40,7 +40,7 @@ export function Projects() {
         className="max-w-6xl mx-auto"
       >
         <h2 className="flex items-center gap-2 text-3xl font-bold text-[#ccd6f6] mb-12">
-          <span className="text-[#64ffda]">02.</span> Some Things I've Built
+          <span className="text-[#64ffda]">03.</span> Some Things I've Built
         </h2>
 
         <div className="space-y-32">

@@ -17,7 +17,7 @@ export function Contact() {
         transition={{ duration: 0.5 }}
         className="max-w-2xl mx-auto text-center"
       >
-        <p className="text-[#64ffda] mb-4">03. What's Next?</p>
+        <p className="text-[#64ffda] mb-4">04. What's Next?</p>
         <h2 className="text-4xl sm:text-5xl font-bold text-[#ccd6f6] mb-6">Get In Touch</h2>
         <p className="text-[#8892b0] mb-12">
           Although I'm not currently looking for any new opportunities, my inbox is always

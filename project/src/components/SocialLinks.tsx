@@ -1,13 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail, Code2 } from 'lucide-react';
 
 export function SocialLinks() {
   const socialLinks = [
     { Icon: Github, href: 'https://github.com' },
     { Icon: Linkedin, href: 'https://linkedin.com' },
+    { Icon: Code2, href: 'https://leetcode.com' },
     { Icon: Twitter, href: 'https://twitter.com' },
-    { Icon: Mail, href: 'mailto:rishikeshdubey942@gmail.com' },
+    { Icon: Mail, href: 'mailto:hello@example.com' },
   ];
 
   return (
