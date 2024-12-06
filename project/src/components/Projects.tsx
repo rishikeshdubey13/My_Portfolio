@@ -1,28 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Github, ExternalLink } from 'lucide-react';
-
-const projects = [
-  {
-    title: 'Featured Project',
-    name: 'Spotify Profile',
-    description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800&h=500',
-    tech: ['React', 'Node.js', 'Express', 'Spotify API'],
-    github: 'https://github.com',
-    external: 'https://example.com',
-  },
-  {
-    title: 'Featured Project',
-    name: 'AI Code Assistant',
-    description: 'An AI-powered code assistant that helps developers write better code faster. Features include code completion, bug detection, and automated code reviews. Built with cutting-edge machine learning models.',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800&h=500',
-    tech: ['Python', 'TensorFlow', 'FastAPI', 'React'],
-    github: 'https://github.com',
-    external: 'https://example.com',
-  },
-];
+import { Github, ExternalLink, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { projects } from '../data/projects';
 
 export function Projects() {
   const [ref, inView] = useInView({
@@ -40,13 +21,13 @@ export function Projects() {
         className="max-w-6xl mx-auto"
       >
         <h2 className="flex items-center gap-2 text-3xl font-bold text-[#ccd6f6] mb-12">
-          <span className="text-[#64ffda]">03.</span> Some Things I've Built
+          <span className="text-[#64ffda]">02.</span> Some Things I've Built
         </h2>
 
         <div className="space-y-32">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.id}
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -55,7 +36,7 @@ export function Projects() {
               }`}
             >
               <div className="relative group">
-                <a href={project.external} target="_blank" rel="noopener noreferrer">
+                <Link to={`/project/${project.id}`}>
                   <div className="relative">
                     <div className="absolute inset-0 bg-[#64ffda]/20 group-hover:bg-transparent transition-colors"></div>
                     <img
@@ -64,7 +45,7 @@ export function Projects() {
                       className="w-full h-full object-cover rounded-lg"
                     />
                   </div>
-                </a>
+                </Link>
               </div>
 
               <div className={`flex flex-col ${index % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
@@ -74,7 +55,7 @@ export function Projects() {
                   {project.description}
                 </p>
                 <ul className={`flex flex-wrap gap-4 mb-8 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
-                  {project.tech.map((tech) => (
+                  {project.tech.slice(0, 4).map((tech) => (
                     <li key={tech} className="text-[#8892b0] text-sm">
                       {tech}
                     </li>
@@ -97,6 +78,12 @@ export function Projects() {
                   >
                     <ExternalLink size={20} />
                   </a>
+                  <Link
+                    to={`/project/${project.id}`}
+                    className="inline-flex items-center gap-1 text-[#64ffda] hover:gap-2 transition-all"
+                  >
+                    View Details <ArrowRight size={16} />
+                  </Link>
                 </div>
               </div>
             </motion.div>
